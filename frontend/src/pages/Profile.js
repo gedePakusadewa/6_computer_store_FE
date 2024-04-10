@@ -23,8 +23,8 @@ const Profile = () =>{
   return(
     <>
       <h1>Profile</h1>
-      <div>{profile.user.username}</div>
-      <div>{profile.user.email}</div>
+      <div>{profile !== null && (profile.user.username)}</div>
+      <div>{profile !== null && (profile.user.email)}</div>
     </>
   )
 }

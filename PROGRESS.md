@@ -14,7 +14,8 @@ bug
     - ~image url bug in search~
       - why is this only happen in search not in dashboard?
   - FE
-    - fix profile display error
+    - ~fix profile display error~
+    
 - Make responsive for some specific screen
 - finish design and style
 - 
