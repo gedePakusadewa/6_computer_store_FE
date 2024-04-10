@@ -7,6 +7,18 @@ bug
   - fix profile display error
   - search example of base color for template dashboard etc
 
+#### day 10
+- FIXING bug
+  - BE
+    - ~bug response in API get all cart~
+    - ~image url bug in search~
+      - why is this only happen in search not in dashboard?
+  - FE
+    - fix profile display error
+- Make responsive for some specific screen
+- finish design and style
+- 
+
 #### day 9
 - BE
   - add new data product

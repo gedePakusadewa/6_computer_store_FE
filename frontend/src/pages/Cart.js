@@ -58,7 +58,7 @@ const Cart = () => {
           <div>
             <div>
               <img 
-                src={UrlConst.PRODUCT_IMAGE_URI + "/media/"+ item.image_url}
+                src={UrlConst.PRODUCT_IMAGE_URI + item.image_url}
               />
               <div>{item.name}</div>
               <div>{item.price}</div>
