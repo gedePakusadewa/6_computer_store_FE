@@ -1,4 +1,5 @@
 import UrlConst from "../resources/Urls.js";
+import General from "../resources/General.js";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
@@ -22,9 +23,25 @@ const Profile = () =>{
 
   return(
     <>
-      <h1>Profile</h1>
-      <div>{profile !== null && (profile.user.username)}</div>
-      <div>{profile !== null && (profile.user.email)}</div>
+      <div className="profile-container">
+        <div className="title-profile">{General.PROFILE}</div>
+        <div>Username :</div>
+        <div>
+          <input 
+            className="profile-input" 
+            value={profile !== null && (profile.user.username)}
+            disabled = "disabled"
+          />
+        </div>
+        <div>E-mail :</div>
+        <div>
+          <input
+            className="profile-input"
+            value={profile !== null && (profile.user.email)}
+            disabled = "disabled"
+          />
+        </div>
+      </div>
     </>
   )
 }

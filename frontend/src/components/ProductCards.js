@@ -1,7 +1,8 @@
-import UrlConst from "../resources/Urls.js"
-import { Link } from "react-router-dom";
+import UrlConst from "../resources/Urls.js";
 import ReviewStar from "./ReviewStar.js";
 import ConvertToRupiah from "./ConvertToRupiah.js";
+import ShortenedTitle from "./ShortenedTitleProduct.js";
+import { Link } from "react-router-dom";
 
 const ProductCards = ({products}) => {
   let e1 = [
@@ -43,11 +44,9 @@ const ProductCards = ({products}) => {
               <img
                 src={UrlConst.PRODUCT_IMAGE_URI + item.image_url}
               />
-              <div>{item.name}</div>
-              <div>{item.star_review}</div>
+              <div>{ShortenedTitle(item.name)}</div>
               <div>{ReviewStar(item.star_review)}</div>
-              <div>{ConvertToRupiah(item.price)}</div>
-              
+              <div>{ConvertToRupiah(item.price)}</div>              
             </div>
           </Link>
         ))}

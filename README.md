@@ -26,22 +26,28 @@ Key features:
     - user can add or remove product from the cart page
     - there is a page only display product that add to cart by user
 
-  - Add payment page (NOT IMPLEMENTED)
-    - there is a check out page for use input some payment information
-
-  - All purchased item page (NOT IMPLEMENTED)
-    - user can see all product that have been bought in a page
-    - that page only show product information like product picture, product price, and date user purchased it
-
-  - Currency change (NOT IMPLEMENTED)
-    - user can change currency that have been used in system to user prefer currency. Ex by default system using rupiah (Rp), user change it to US dollar (USD) 
-
-  - Review product(add star and write comment) (NOT IMPLEMENTED)
-    - after user purchase product, user can review (add star and write comment) in product detail and in purchased page
-
 #### Additional Enhancements (Optional):
   - Social Sharing
     - Implement social sharing features, allowing users to share their favorite recipes on social media.
   - admin page
     - admin can CRUD user, CRUD product
+  - Add total number review in star review
+    - add how many people have been submitted review
+  - Add payment page
+    - there is a check out page for use input some payment information
+
+  - All purchased item page
+    - user can see all product that have been bought in a page
+    - that page only show product information like product picture, product price, and date user purchased it
+
+  - Currency change
+    - user can change currency that have been used in system to user prefer currency. Ex by default system using rupiah (Rp), user change it to US dollar (USD) 
+
+  - Review product(add star and write comment)
+    - after user purchase product, user can review (add star and write comment) in product detail and in purchased page
     
+  - Check if stock ready or not
+    - check to DB if the product stock is still available or not
+
+  - user can buy product in some quatity
+    - user can input how many user want to but the product

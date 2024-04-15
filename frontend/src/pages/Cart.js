@@ -1,8 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
-import UrlConst from "../resources/Urls.js"
 import { useCookies } from 'react-cookie';
+import axios from "axios";
+import UrlConst from "../resources/Urls.js";
+import GeneralConst from "../resources/General.js";
+import ConvertToRupiah from "../components/ConvertToRupiah.js";
 
 const Cart = () => {
   const [cookies, setCookie] = useCookies(['user']);
@@ -52,30 +54,49 @@ const Cart = () => {
           There is no product here yet
         </div>
       )}
-
-      {(cartProducts !== null && cartProducts.length > 0) && (
-        cartProducts.map(item => (
-          <div>
+      <div className="cart-product-container">
+        <div>
+          {(cartProducts !== null && cartProducts.length > 0) && (
+            cartProducts.map(item => (
+                <div className="cart-product-wrapper">
+                  <img 
+                    src={UrlConst.PRODUCT_IMAGE_URI + item.image_url}
+                  />
+                  <div className="cart-product-title">{item.name}</div>
+                  <div>
+                    <div>{item.total_order} unit</div>
+                    <div>{ConvertToRupiah(calculateTotalPriceOrder(item.total_order, item.price))}</div>
+                  </div>
+                  <div>
+                    <button
+                      onClick={() => deleteHandler(item.id)}
+                    >
+                      {GeneralConst.DELETE}
+                    </button>
+                  </div>
+                </div>
+            )) 
+          )}
+        </div>
+        <div>
+          <div className="cart-total-container">
             <div>
-              <img 
-                src={UrlConst.PRODUCT_IMAGE_URI + item.image_url}
-              />
-              <div>{item.name}</div>
-              <div>{item.price}</div>
-              <div>{item.total_order}</div>
-              <div>{calculateTotalPriceOrder(item.total_order, item.price)}</div>
-              <div>
-                <button
-                  onClick={() => deleteHandler(item.id)}
-                >
-                  Delete
-                </button>
-              </div>
+              {GeneralConst.CART_TOTAL_ITEM}
+            </div>
+            <div>
+              3
             </div>
           </div>
-        )) 
-      )}
-
+          <div className="cart-total-container">
+            <div>
+              {GeneralConst.CART_TOTAL_PRICE}
+            </div>
+            <div>
+              Rp. 1.000.000, 00
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   )
 }

@@ -49,7 +49,7 @@ const Dashboard = () =>{
       <div className="container-search-input">
         <input
           className="search-input-home"
-          placeholder="Example: pasta"
+          placeholder="Example: Monitor"
           onChange={
             (e) => {setSearchInput(e.target.value)}
           }

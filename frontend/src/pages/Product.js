@@ -1,8 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
-import UrlConst from "../resources/Urls.js"
 import { useCookies } from 'react-cookie';
+import axios from "axios";
+import UrlConst from "../resources/Urls.js";
+import GeneralConst from "../resources/General.js";
+import ReviewStar from "../components/ReviewStar.js";
+import ConvertToRupiah from "../components/ConvertToRupiah.js";
 
 const Product = () => {
   let { id } = useParams();
@@ -44,25 +47,35 @@ const Product = () => {
     <>
       {product !== null && (
         <div className="product-container">
-          <div>
+          <div className="product-img">
             <img
               src={UrlConst.PRODUCT_IMAGE_URI + product.image_url}
             />
           </div>
-          <div> 
-            <div>{product.name}</div>
-            <div>{product.star_review}</div>
-            <div>Description</div>
-            <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+          <div className="product-description"> 
+            <div className="product-description-title">{product.name}</div>
+            <div>{ReviewStar(product.star_review)}</div>
+            <div>{GeneralConst.PRODUCT_LOREM_IPSUM}</div>
           </div>
           <div>
-            <div>Rp. {product.price}</div>
-            <div>Status In Stock</div>
+            <div className="product-buy-wrapper">
+              <div className="product-buy-title">Price</div>
+              <div>{ConvertToRupiah(product.price)}</div>
+            </div>
+            <div className="product-buy-wrapper">
+              <div className="product-buy-title">Status</div>
+              <div>In Stock</div>
+            </div>
+            <div className="product-buy-wrapper">
+              <div className="product-buy-title">Quantity</div>
+              <div>7</div>
+            </div>
             <div>
               <button
+                className="product-buy-button"
                 onClick={AddToCartHandler}
               >
-                Add To Cart
+                {GeneralConst.PRODUCT_ADD_CART}
               </button>
             </div>
           </div>

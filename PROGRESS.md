@@ -1,11 +1,28 @@
 bug
 - BE
-  - bug response in API get all cart
-  - bug image url yang nggk tampil, nggak makek awalan media
+  - add go back button to dashbaord in detail product
 
 - FE
-  - fix profile display error
-  - search example of base color for template dashboard etc
+  - when user searct empty field inpuyt after search something else
+    the empty result text still exist
+  - when user click button add to cart, there is no notification/alert that said product already being added
+  - add function to calculate total order and total price in cart
+
+### DAY 12
+- ~input  new data for product~
+- FE
+  - ~fix dashboard color~
+  - ~fix product detail style~
+  - fix cart style
+
+#### day 11
+- FE
+  - template https://public-files.gumroad.com/19884uhsywwk4kmvrjoz1ruza82h
+  - ~fix profile style~
+  - ~fix navbar style~
+  - color pallete https://colors.muz.li/palette/66bafe/4795b2/d9f5ff/b3eaff/ffffff
+  - fix dashboard style
+
 
 #### day 10
 - FIXING bug
@@ -15,7 +32,8 @@ bug
       - why is this only happen in search not in dashboard?
   - FE
     - ~fix profile display error~
-    
+    - search example of base color for template dashboard etc
+      - use this as example color template 
 - Make responsive for some specific screen
 - finish design and style
 - 
