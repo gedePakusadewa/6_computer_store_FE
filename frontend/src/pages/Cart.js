@@ -1,4 +1,3 @@
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
 import axios from "axios";
@@ -65,9 +64,11 @@ const Cart = () => {
                   <div className="cart-product-title">{item.name}</div>
                   <div>
                     <div>{item.total_order} unit</div>
-                    <div>{ConvertToRupiah(calculateTotalPriceOrder(item.total_order, item.price))}</div>
+                    <div>
+                      {ConvertToRupiah(calculateTotalPriceOrder(item.total_order, item.price))}
+                    </div>
                   </div>
-                  <div>
+                  <div className="cart-product-delete-btn">
                     <button
                       onClick={() => deleteHandler(item.id)}
                     >

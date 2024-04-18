@@ -343,11 +343,13 @@ nav {
 
 .cart-product-title{
     width: 100px;
+    padding: 5px;
 }
 
 .cart-product-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .cart-total-container{
@@ -365,9 +367,15 @@ nav {
     padding-right: 30px;
 }
 
+.cart-product-delete-btn{
+    text-align: right;
+    width: 20%;
+}
+
 @media only screen and (min-width: 768px) {
     .cart-product-title{
         width: 200px;
+        padding: 5px;
     }
 
     .cart-product-container{

@@ -25,7 +25,7 @@ library.add(fas, far)
 function App() {
   return (
     <div className="App-container">
-      <BrowserRouter>      
+      <BrowserRouter basename='/6_computer_store_FE'>   
         <AuthProvider> 
           <Routes>
             <Route path="/" element={
