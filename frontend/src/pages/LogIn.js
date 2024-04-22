@@ -10,6 +10,7 @@ const LogIn = () =>{
     username:"",
     password:""
   });
+  const [isShowSignUp, setIsShowSignUp] = useState(false);
 
   const updateForm = (e)  =>{
     setForm(previousState =>{
@@ -46,11 +47,19 @@ const LogIn = () =>{
           >
             {GeneralConst.LOGIN}
           </button>
+          {isShowSignUp && (
+            <button
+              className="btn-cust btn-signup" 
+              onClick={()=>context.handleSignUp()}
+            >
+              {GeneralConst.SIGNUP}
+            </button>
+          )}
           <button
             className="btn-cust btn-signup" 
-            onClick={()=>context.handleSignUp()}
+            onClick={()=>context.handleDemoLogin()}
           >
-            {GeneralConst.SIGNUP}
+            {GeneralConst.LOGIN_AS_GUEST}
           </button>
         </div>
       </div>

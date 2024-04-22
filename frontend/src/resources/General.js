@@ -20,6 +20,7 @@ const General = {
     DELETE: "Delete",
     CART_TOTAL_ITEM:"Total Item(s)",
     CART_TOTAL_PRICE:"Total Price",
+    LOGIN_AS_GUEST:"Log In As Guest (demo)"
   };
   
   export default General

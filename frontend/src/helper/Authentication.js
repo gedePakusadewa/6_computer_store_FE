@@ -34,6 +34,26 @@ const AuthProvider = ({ children }) => {
       // setCookie('token', token, { path: '/' });
     };
 
+    const handleDemoLogin = async (username, password) => {      
+      axios({
+        method: 'post',
+        url: UrlConst.LOGIN,
+        data: 
+        {
+          isDemo: true
+        }
+      }).
+      then((res) => {
+        setToken(res.data.token);
+        navigate('/');
+        setCookie('token', res.data.token, { path: '/' });
+        setIsErrorInput(false)
+      }).
+      catch((res) =>{
+        setIsErrorInput(true)
+      })
+    };
+
     const handleSubmitSignUp = async (username, password, email) => {      
       axios.post(UrlConst.SIGNUP, {
         username, password, email
@@ -77,6 +97,7 @@ const AuthProvider = ({ children }) => {
       handleLogout,
       handleSignUp,
       handleSubmitSignUp,
+      handleDemoLogin,
       isErrorInput
     };
 
