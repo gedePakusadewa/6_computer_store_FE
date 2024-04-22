@@ -40,9 +40,6 @@ Key features:
     - user can see all product that have been bought in a page
     - that page only show product information like product picture, product price, and date user purchased it
 
-  - Currency change
-    - user can change currency that have been used in system to user prefer currency. Ex by default system using rupiah (Rp), user change it to US dollar (USD) 
-
   - Review product(add star and write comment)
     - after user purchase product, user can review (add star and write comment) in product detail and in purchased page
     

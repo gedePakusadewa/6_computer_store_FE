@@ -15,12 +15,12 @@
 
 .btn-signup{
     border-radius: 8px;
-    background-color: 	#d07619;
+    background-color: #4795b2;
 }
 
 .btn-login{
     border-radius: 8px;
-    background-color: #8b1b07;
+    background-color: #66bafe;
 }
 
 input{
@@ -41,8 +41,8 @@ input{
 
 .login-container > div {
   width: 300px;
-  margin-top: 107px;
-  background-color: #e2a74e;
+  margin-top: 30px;
+  background-color: #b3eaff;
   padding: 20px;
   border-radius: 5px;
 }
@@ -72,16 +72,16 @@ input{
     margin-top:10px;
 }
 
+.login-title{
+    margin-top: 50px;
+    text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
     /* for desktop */
-    .login-container > div {
-        margin-left: 100px;
-    }
-
     .login-container{
         display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        justify-content: center;
         height: auto;
     }
 

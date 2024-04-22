@@ -6,6 +6,7 @@ const General = {
     PASSWORD:"Password",
     EMAIL:"Email",
     LOGIN:"Log In",
+    TITLE_LOGIN: "Computer Store",
     SIGNUP:"Sign Up",
     SUBMIT:"Submit",
     DASHBOARD:"Dashboard",

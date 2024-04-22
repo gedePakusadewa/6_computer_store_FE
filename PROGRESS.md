@@ -1,12 +1,38 @@
+new feature
+- login as visitor (demo)
+  - BE
+    - add new user as visitor so visitor can use all feature without create new account
+  - FE
+    - add button login as visitor di login page
+    - hide sign up button, admin still can create user by through API
+    - add update/delete button
+      - add update and delete button in profile
+
 bug
 - BE
-  - add go back button to dashbaord in detail product
-
+  - delete cart issue production
+    - check why delete button not working in cart (user1)
+  - url login
+    - when user directly use 6_computer_store_FE/login then it will display 404 but if user use 6_computer_store_FE (without login) then it succeed display login page
 - FE
-  - when user searct empty field inpuyt after search something else
-    the empty result text still exist
-  - when user click button add to cart, there is no notification/alert that said product already being added
-  - add function to calculate total order and total price in cart
+  - empty text after new search 
+    - when user searct empty field inpuyt after search something else the empty result text still exist
+  - notification after action
+    - when user click button add to cart, there is no notification/alert that said product already being added
+    - when user click delete, there is no notification said item has been deleted
+  - calculate total order
+    - add function to calculate total order and total price in cart
+  - add go back
+    - add go back button to dashbaord in detail product
+  - style
+    - ~update style login~
+  - add loading page
+    - add loading icon between page                                                           
+
+### day 13
+- check bug/add new feature in BE and FE in production/staging
+- ~update style login~
+- 
 
 ### DAY 12
 - ~input  new data for product~

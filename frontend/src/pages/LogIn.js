@@ -22,9 +22,9 @@ const LogIn = () =>{
 
   return(
     <div className="login-container-bg">
+        <h2 className="login-title">{GeneralConst.TITLE_LOGIN}</h2>
       <div className="login-container">
         <div>
-          <h2>{GeneralConst.TITLELOGIN}</h2>
           {context.isErrorInput && (
             <p className="wrong-username-password">{GeneralConst.WRONGINPUTLOGIN}</p>
           )}
