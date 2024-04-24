@@ -1,18 +1,18 @@
 new feature
 - login as visitor (demo)
   - BE
-    - add new user as visitor so visitor can use all feature without create new account
+    - ~add new user as visitor so visitor can use all feature without create new account~
   - FE
-    - add button login as visitor di login page
-    - hide sign up button, admin still can create user by through API
-    - add update/delete button
-      - add update and delete button in profile
+    - ~add button login as visitor di login page~
+    - ~hide sign up button, admin still can create user by through API~
+- add update/delete button
+  - add update and delete button in profile
 
 bug
 - BE
   - delete cart issue production
     - check why delete button not working in cart (user1)
-  - url login
+  - url login production
     - when user directly use 6_computer_store_FE/login then it will display 404 but if user use 6_computer_store_FE (without login) then it succeed display login page
 - FE
   - empty text after new search 
@@ -29,10 +29,26 @@ bug
   - add loading page
     - add loading icon between page                                                           
 
+### day 14
+- add update/delete button
+  - ~add update button in profile~
+  - ~add delete button in profile~
+  - ~add API update~
+  - ~dd loading page when updating~
+  - add API delete
+    - delete user data
+    - delete cart data based on user
+  - ~add delete confirmation modal~
+- profile styling
+  - put component in the middle for desktop
+  - change color for update button
+
 ### day 13
 - check bug/add new feature in BE and FE in production/staging
 - ~update style login~
-- 
+- ~add new user as visitor so visitor can use all feature without create new account~
+- ~add button login as visitor di login page~
+- ~hide sign up button, admin still can create user by through API~
 
 ### DAY 12
 - ~input  new data for product~

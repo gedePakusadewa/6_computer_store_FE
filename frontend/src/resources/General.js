@@ -20,7 +20,13 @@ const General = {
     DELETE: "Delete",
     CART_TOTAL_ITEM:"Total Item(s)",
     CART_TOTAL_PRICE:"Total Price",
-    LOGIN_AS_GUEST:"Log In As Guest (demo)"
+    LOGIN_AS_GUEST:"Log In As Guest (demo)",
+    UPDATE:"Update",
+    PROFILE_WAIT_MESSAGE: "Please wait, your request already in process.",
+    CLOSE:"Close",
+    DELETE_ACCOUNT_CONFIRMATION_TITLE:"Delete Confirmation",
+    DELETE_ACCOUNT_CONFIRMATION_TEXT:"Are you sure delete this account {username}?",
+    DELETE_ACCOUNT_YES_BTN:"Yes, delete this account",
   };
   
   export default General

@@ -13,9 +13,10 @@ const AuthProvider = ({ children }) => {
 
     const navigate = useNavigate();
 
-    const handleLogin = async (username, password) => {      
+    const handleLogin = async (username, password) => {   
+      let isDemo = false;   
       axios.post(UrlConst.LOGIN, {
-        username, password
+        username, password, isDemo
       }).
       then((res) => {
         setToken(res.data.token);

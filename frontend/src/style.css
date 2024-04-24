@@ -315,6 +315,15 @@ nav {
     margin-bottom: 20px;
 }
 
+.profile-wait-message{
+    text-align: center;
+    font-weight: 700;
+}
+
+.profile-wait-message-icon{
+    text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
     .profile-container{
         margin: 5%;

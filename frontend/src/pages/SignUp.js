@@ -49,7 +49,7 @@ const SignUp = () =>{
             onChange={(e)=>{updateForm(e)}}
           /><br />
           <button
-          className="btn-cust btn-signup btn-login-signup-first-child"
+            className="btn-cust btn-signup btn-login-signup-first-child"
             onClick={
               ()=>context.handleSubmitSignUp(
                 form.username, 
