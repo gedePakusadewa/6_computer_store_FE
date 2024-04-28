@@ -29,6 +29,10 @@ bug
   - add loading page
     - add loading icon between page                                                           
 
+### day ??
+- continue making SP for delete user and delete cart data
+- etc
+
 ### day 14
 - add update/delete button
   - ~add update button in profile~
