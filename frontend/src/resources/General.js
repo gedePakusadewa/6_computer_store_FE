@@ -27,6 +27,7 @@ const General = {
     DELETE_ACCOUNT_CONFIRMATION_TITLE:"Delete Confirmation",
     DELETE_ACCOUNT_CONFIRMATION_TEXT:"Are you sure delete this account {username}?",
     DELETE_ACCOUNT_YES_BTN:"Yes, delete this account",
+    PROFILE_DEMO_DISABLE_MESSAGE: "User demo can not update/delete account."
   };
   
   export default General

@@ -29,9 +29,16 @@ bug
   - add loading page
     - add loading icon between page                                                           
 
-### day ??
+### day 15
 - continue making SP for delete user and delete cart data
 - etc
+- if demo, user cant update/delete in profile
+  - ~add disabled when user is demo~
+  - ~add API to check if use is demo or not~
+  - ~add validation for update/delete user in BE avoid demo user doing action~
+  - ~update postmand for userdemo API~
+  - ~update button update/delete when disabled~
+  - 
 
 ### day 14
 - add update/delete button

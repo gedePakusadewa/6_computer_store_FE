@@ -2,11 +2,13 @@ import UrlConst from "../resources/Urls.js";
 import GeneralConst from "../resources/General.js";
 import axios from "axios";
 import DeleteAccountConfirmationModal from "../components/DeleteAccountConfirmationModal.js";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useCookies } from 'react-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { AuthContext } from "../App.js";
 
 const Profile = () =>{
+  const context = useContext(AuthContext);
   const [cookies, setCookie] = useCookies(['user']);
 
   const [form, setForm] = useState({
@@ -16,6 +18,7 @@ const Profile = () =>{
   const [isShowActionButton, setIsShowActionButton] = useState(true);
   const [isEnableInput, setIsEnableInput] = useState(true);
   const [isShowModalDelete, setIsShowModalDelete] = useState(false);
+  const [isDemoUser, setIsDemoUser] = useState(false);
 
   useEffect(() =>{
     axios({
@@ -29,7 +32,13 @@ const Profile = () =>{
       })
     }).catch((err) => {
       console.log("error in profile")
-    })
+    });
+
+    context.checkUserDemoHandler(cookies['token'], setIsDemoUser);
+
+    if(isDemoUser){
+      setIsEnableInput(false);
+    }    
   }, []);
 
   const updateHandler = () => {
@@ -110,17 +119,24 @@ const Profile = () =>{
             onChange={(e) => {onChangeHandler(e)}}
           />
         </div>
+        {isDemoUser && (
+          <div className="profile-disabled-action">
+            {GeneralConst.PROFILE_DEMO_DISABLE_MESSAGE}
+          </div>
+        )}        
         {isShowActionButton && (
           <>
             <button
               className="btn-cust btn-signup btn-login-signup-first-child"
               onClick={updateHandler}
+              disabled={isDemoUser ? true : false}
             >
               {GeneralConst.UPDATE}
             </button>
             <button
               className="btn-cust btn-signup btn-login-signup-first-child"
               onClick={modalDeleteHandler}
+              disabled={isDemoUser ? true : false}
             >
               {GeneralConst.DELETE}
             </button>

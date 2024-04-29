@@ -324,6 +324,16 @@ nav {
     text-align: center;
 }
 
+.profile-disabled-action{
+    color: red;
+    font-weight: 500;
+}
+
+.btn-login-signup-first-child:disabled{
+    background-color: #cccccc;
+    color: #666666;
+}
+
 @media only screen and (min-width: 768px) {
     .profile-container{
         margin: 5%;

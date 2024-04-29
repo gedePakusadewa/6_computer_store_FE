@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import UrlConst from "../resources/Urls.js"
 
@@ -9,7 +9,7 @@ import { useCookies } from 'react-cookie';
 const AuthProvider = ({ children }) => {
     const [token, setToken] = React.useState(null);
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
-    const [isErrorInput, setIsErrorInput] = useState(false)
+    const [isErrorInput, setIsErrorInput] = useState(false);
 
     const navigate = useNavigate();
 
@@ -92,6 +92,23 @@ const AuthProvider = ({ children }) => {
       setIsErrorInput(false)
     }
 
+    // i think its not suitable to put
+    // this function in authentication file but for now
+    // let it here
+    // TODO find/create new file for this function
+    const checkUserDemoHandler = (currToken, setIsDemoUser) => {
+      axios({
+        method: 'get',
+        url: UrlConst.USER_DEMO,
+        headers: {'Authorization': "Token " + currToken},
+      }).
+      then((res) => {
+        setIsDemoUser(res.data.data);
+      }).
+      catch((res) =>{
+      })
+    }
+
     const value = {
       token,
       handleLogin,
@@ -99,7 +116,8 @@ const AuthProvider = ({ children }) => {
       handleSignUp,
       handleSubmitSignUp,
       handleDemoLogin,
-      isErrorInput
+      isErrorInput,
+      checkUserDemoHandler
     };
 
     // fake API
