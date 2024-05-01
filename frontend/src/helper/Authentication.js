@@ -19,9 +19,9 @@ const AuthProvider = ({ children }) => {
         username, password, isDemo
       }).
       then((res) => {
-        setToken(res.data.token);
+        setToken(res.data.Token);
         navigate('/');
-        setCookie('token', res.data.token, { path: '/' });
+        setCookie('token', res.data.Token, { path: '/' });
         setIsErrorInput(false)
       }).
       catch((res) =>{
@@ -39,15 +39,12 @@ const AuthProvider = ({ children }) => {
       axios({
         method: 'post',
         url: UrlConst.LOGIN,
-        data: 
-        {
-          isDemo: true
-        }
+        data: { isDemo: true }
       }).
       then((res) => {
-        setToken(res.data.token);
+        setToken(res.data.Token);
         navigate('/');
-        setCookie('token', res.data.token, { path: '/' });
+        setCookie('token', res.data.Token, { path: '/' });
         setIsErrorInput(false)
       }).
       catch((res) =>{
@@ -60,9 +57,9 @@ const AuthProvider = ({ children }) => {
         username, password, email
       }).
       then((res) => {
-        setToken(res.data.token);
+        setToken(res.data.Token);
         navigate('/');
-        setCookie('token', res.data.token, { path: '/' });
+        setCookie('token', res.data.Token, { path: '/' });
       }).catch((res) =>{
         setIsErrorInput(true)
       })
@@ -103,7 +100,7 @@ const AuthProvider = ({ children }) => {
         headers: {'Authorization': "Token " + currToken},
       }).
       then((res) => {
-        setIsDemoUser(res.data.data);
+        setIsDemoUser(res.data.Data);
       }).
       catch((res) =>{
       })

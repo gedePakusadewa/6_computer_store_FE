@@ -6,10 +6,12 @@ import { useState, useEffect, useContext } from "react";
 import { useCookies } from 'react-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { AuthContext } from "../App.js";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () =>{
   const context = useContext(AuthContext);
-  const [cookies, setCookie] = useCookies(['user']);
+  const [cookies, setCookie, removeCookie] = useCookies(['user']);
+  const navigate = useNavigate();
 
   const [form, setForm] = useState({
     username:"",
@@ -27,11 +29,11 @@ const Profile = () =>{
       headers: {'Authorization': "Token " + cookies['token']},
     }).then((res) => {
       setForm({
-        username: res.data.user.username,
-        email: res.data.user.email
+        username: res.data.User.username,
+        email: res.data.User.email
       })
     }).catch((err) => {
-      console.log("error in profile")
+      // console.log("error in profile")
     });
 
     context.checkUserDemoHandler(cookies['token'], setIsDemoUser);
@@ -55,13 +57,15 @@ const Profile = () =>{
       }
     }).then((res) => {
       setForm({
-        username: res.data.user.username,
-        email: res.data.user.email
-      })
-      setIsShowActionButton(true)
-      setIsEnableInput(true)
+        username: res.data.User.username,
+        email: res.data.User.email
+      });
+      setIsShowActionButton(true);
+      setIsEnableInput(true);
     }).catch((err) => {
-      console.log("error when update profile")
+      // console.log(err)
+      setIsShowActionButton(true);
+      setIsEnableInput(true);
     })
   };
 
@@ -79,17 +83,19 @@ const Profile = () =>{
   }
 
   const deleteHandler = () => {
+    setIsShowActionButton(false);
+
     axios({
-      method: 'get',
+      method: 'delete',
       url: UrlConst.PROFILE,
       headers: {'Authorization': "Token " + cookies['token']},
     }).then((res) => {
-      setForm({
-        username: res.data.user.username,
-        email: res.data.user.email
-      })
+      setIsShowActionButton(true);
+      removeCookie('token' ,{path:'/'});
+      navigate('/login');
     }).catch((err) => {
-      console.log("error in profile")
+      setIsShowActionButton(true);
+      // console.log("error in profile")
     })
   }
 
@@ -155,8 +161,9 @@ const Profile = () =>{
       </div>
       {isShowModalDelete && (
         <DeleteAccountConfirmationModal
-          username={form.username}
+          username = {form.username}
           setIsShowModalDelete = {setIsShowModalDelete}
+          deleteHandler = {deleteHandler}
         />
       )}
     </>

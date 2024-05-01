@@ -1,5 +1,5 @@
 new feature
-- login as visitor (demo)
+- ~login as visitor (demo)~
   - BE
     - ~add new user as visitor so visitor can use all feature without create new account~
   - FE
@@ -7,6 +7,7 @@ new feature
     - ~hide sign up button, admin still can create user by through API~
 - add update/delete button
   - add update and delete button in profile
+- add notification profile has been updated
 
 bug
 - BE
@@ -14,6 +15,7 @@ bug
     - check why delete button not working in cart (user1)
   - url login production
     - when user directly use 6_computer_store_FE/login then it will display 404 but if user use 6_computer_store_FE (without login) then it succeed display login page
+  - update constant BE
 - FE
   - empty text after new search 
     - when user searct empty field inpuyt after search something else the empty result text still exist
@@ -29,16 +31,25 @@ bug
   - add loading page
     - add loading icon between page                                                           
 
+### day 16
+- add blank payment page
+- add table for purchasing
+- add purchased customer product
+- add loading between page
+- ~check delete user already delete cart or not~
+  - ~add URL to delete userprofile in FE~
+- ~update constant in BE~
+- ~Check impact FE from update constant in BE~
+
 ### day 15
-- continue making SP for delete user and delete cart data
-- etc
-- if demo, user cant update/delete in profile
+- ~continue making SP for delete user and delete cart data~
+- ~if demo, user cant update/delete in profile~
   - ~add disabled when user is demo~
   - ~add API to check if use is demo or not~
   - ~add validation for update/delete user in BE avoid demo user doing action~
   - ~update postmand for userdemo API~
   - ~update button update/delete when disabled~
-  - 
+- ~add general constant in BE~
 
 ### day 14
 - add update/delete button

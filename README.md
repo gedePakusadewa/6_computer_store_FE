@@ -33,6 +33,7 @@ Key features:
     - admin can CRUD user, CRUD product
   - Add total number review in star review
     - add how many people have been submitted review
+    
   - Add payment page
     - there is a check out page for use input some payment information
 
