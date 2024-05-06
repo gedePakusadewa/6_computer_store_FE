@@ -6,6 +6,7 @@ import LogIn from './pages/LogIn.js';
 import SignUp from './pages/SignUp.js';
 import Product from './pages/Product.js';
 import Cart from './pages/Cart.js';
+import Payment from './pages/Payment.js';
 import AuthProvider from './helper/Authentication.js';
 import ProtectedRoute from './helper/ProtectedRoute.js';
 import GeneralConst from "./resources/General.js"
@@ -68,6 +69,12 @@ function App() {
                 <Cart />
               </ProtectedRoute> 
             }/>
+            <Route path="/payment" element={
+              <ProtectedRoute>
+                <Payment />
+              </ProtectedRoute> 
+            }/>
+
             <Route path="/login" element={<LogIn />} />
             <Route path="/signup" element={<SignUp />} />
           </Routes>

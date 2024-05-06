@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import UrlConst from "../resources/Urls.js";
 import GeneralConst from "../resources/General.js";
@@ -11,6 +12,8 @@ const Cart = () => {
 
   const [cartProducts, setCartProducts] = useState(null);
   const [isLoading, setIsloading] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchAllCartProduct()
@@ -50,6 +53,10 @@ const Cart = () => {
       console.log("error in cart product detail");
       setIsloading(false);
     })
+  }
+
+  const checkOutHandler = () => {
+    navigate('/payment');
   }
 
   return (
@@ -110,6 +117,11 @@ const Cart = () => {
               Rp. 1.000.000, 00
             </div>
           </div>
+          <button
+            onClick={checkOutHandler}
+          >
+            {GeneralConst.CART_CHECKOUT}
+          </button>
         </div>
       </div>
     </>

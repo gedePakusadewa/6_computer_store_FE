@@ -28,7 +28,13 @@ const General = {
     DELETE_ACCOUNT_CONFIRMATION_TEXT:"Are you sure delete this account {username}?",
     DELETE_ACCOUNT_YES_BTN:"Yes, delete this account",
     PROFILE_DEMO_DISABLE_MESSAGE: "User demo can not update/delete account.",
-    PROFILE_DELETE_WAIT: "Please wait while we are deleting your data"
+    PROFILE_DELETE_WAIT: "Please wait while we are deleting your data",
+    CART_CHECKOUT:"Check Out",
+
+    //payment
+    PAYMENT_BTN_BACK_TO_CART:"Back To Cart",
+    PAYMENT_BTN_PAY:"Pay(demo)",
+    PAYMENT_DEMO_PAY_DESC:"For now, user can directly pay without input anything."
   };
   
   export default General

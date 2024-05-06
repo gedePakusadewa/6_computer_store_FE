@@ -32,7 +32,11 @@ bug
     - add loading icon between page                                                           
 
 ### day 17
-- add blank payment page
+- ~add blank payment page~
+  - ~add button checkout in cart~
+  - ~add blank page~
+  - ~add back to cart button~
+  - ~add pay button~
 - add table for purchasing
 - add purchased customer product
 - ~add loading between page~
