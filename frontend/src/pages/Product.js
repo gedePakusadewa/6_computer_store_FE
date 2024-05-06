@@ -6,6 +6,7 @@ import UrlConst from "../resources/Urls.js";
 import GeneralConst from "../resources/General.js";
 import ReviewStar from "../components/ReviewStar.js";
 import ConvertToRupiah from "../components/ConvertToRupiah.js";
+import LoadingBetweenPage from "../components/LoadingBetweenPage.js";
 
 const Product = () => {
   let { id } = useParams();
@@ -13,18 +14,10 @@ const Product = () => {
   const [cookies, setCookie] = useCookies(['user']);
 
   const [product, setProduct] = useState(null);
+  const [isLoading, setIsloading] = useState(false);
 
   useEffect(() => {
-    axios({
-      method: 'get',
-      url: UrlConst.PRODUCT_DETAIL,
-      headers: {'Authorization': "Token " + cookies['token']},
-      params: { pk : id}
-    }).then((res) => {
-      setProduct(res.data.product_detail)
-    }).catch((err) => {
-      console.log("error in product detail")
-    })
+    getProductHandler();
   }, [])
 
   const AddToCartHandler = () => {
@@ -43,9 +36,29 @@ const Product = () => {
     })
   }
 
+  const getProductHandler = () => {
+    setIsloading(true);
+
+    axios({
+      method: 'get',
+      url: UrlConst.PRODUCT_DETAIL,
+      headers: {'Authorization': "Token " + cookies['token']},
+      params: { pk : id}
+    }).then((res) => {
+      setProduct(res.data.product_detail);
+      setIsloading(false);
+    }).catch((err) => {
+      console.log("error in product detail");
+      setIsloading(false);
+    })
+  }
+
   return (
     <>
-      {product !== null && (
+      {isLoading && (
+        <LoadingBetweenPage />
+      )}
+      {(isLoading === false && product !== null) && (
         <div className="product-container">
           <div className="product-img">
             <img

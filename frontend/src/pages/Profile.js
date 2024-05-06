@@ -1,7 +1,9 @@
 import UrlConst from "../resources/Urls.js";
 import GeneralConst from "../resources/General.js";
 import axios from "axios";
-import DeleteAccountConfirmationModal from "../components/DeleteAccountConfirmationModal.js";
+import DeleteAccountConfirmationModal 
+  from "../components/DeleteAccountConfirmationModal.js";
+import LoadingBetweenPage from "../components/LoadingBetweenPage.js";
 import { useState, useEffect, useContext } from "react";
 import { useCookies } from 'react-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,20 +23,10 @@ const Profile = () =>{
   const [isEnableInput, setIsEnableInput] = useState(true);
   const [isShowModalDelete, setIsShowModalDelete] = useState(false);
   const [isDemoUser, setIsDemoUser] = useState(false);
+  const [isLoading, setIsloading] = useState(false);
 
   useEffect(() =>{
-    axios({
-      method: 'get',
-      url: UrlConst.PROFILE,
-      headers: {'Authorization': "Token " + cookies['token']},
-    }).then((res) => {
-      setForm({
-        username: res.data.User.username,
-        email: res.data.User.email
-      })
-    }).catch((err) => {
-      // console.log("error in profile")
-    });
+    getProfileHandler();
 
     context.checkUserDemoHandler(cookies['token'], setIsDemoUser);
 
@@ -99,66 +91,93 @@ const Profile = () =>{
     })
   }
 
+  const getProfileHandler = () => {
+    setIsloading(true);
+
+    axios({
+      method: 'get',
+      url: UrlConst.PROFILE,
+      headers: {'Authorization': "Token " + cookies['token']},
+    }).then((res) => {
+      setForm({
+        username: res.data.User.username,
+        email: res.data.User.email
+      });
+      setIsloading(false);
+    }).catch((err) => {
+      setIsloading(false);
+      // console.log("error in profile")
+    });
+  }
+
   return(
     <>
-      <div className="profile-container">
-        <div className="title-profile">{GeneralConst.PROFILE}</div>
-        <div>{GeneralConst.USERNAME}</div>
-        <div>
-          <input 
-            className="profile-input"
-            defaultValue={form.username}
-            name="username"
-            // value={profile !== null && (profile.user.username)}
-            disabled = {isEnableInput ? "" : "disabled"}
-            onChange={(e) => {onChangeHandler(e)}}
-          />
-        </div>
-        <div>{GeneralConst.EMAIL}</div>
-        <div>
-          <input
-            className="profile-input"
-            defaultValue={form.email}
-            name="email"
-            // value={profile !== null && (profile.user.email)}
-            disabled = {isEnableInput ? "" : "disabled"}
-            onChange={(e) => {onChangeHandler(e)}}
-          />
-        </div>
-        {isDemoUser && (
-          <div className="profile-disabled-action">
-            {GeneralConst.PROFILE_DEMO_DISABLE_MESSAGE}
-          </div>
-        )}        
-        {isShowActionButton && (
-          <>
-            <button
-              className="btn-cust btn-signup btn-login-signup-first-child"
-              onClick={updateHandler}
-              disabled={isDemoUser ? true : false}
-            >
-              {GeneralConst.UPDATE}
-            </button>
-            <button
-              className="btn-cust btn-signup btn-login-signup-first-child"
-              onClick={modalDeleteHandler}
-              disabled={isDemoUser ? true : false}
-            >
-              {GeneralConst.DELETE}
-            </button>
-          </>
-        )}
-        {isShowActionButton === false && (
-          <>
-            <div className="profile-wait-message">
-              {GeneralConst.PROFILE_WAIT_MESSAGE}
+      {isLoading && (
+        <LoadingBetweenPage />
+      )}
+
+      {isLoading === false && (
+        <>
+          <div className="profile-container">
+            <div className="title-profile">{GeneralConst.PROFILE}</div>
+            <div>{GeneralConst.USERNAME}</div>
+            <div>
+              <input 
+                className="profile-input"
+                defaultValue={form.username}
+                name="username"
+                // value={profile !== null && (profile.user.username)}
+                disabled = {isEnableInput ? "" : "disabled"}
+                onChange={(e) => {onChangeHandler(e)}}
+              />
             </div>
-            <div className="profile-wait-message-icon">
-              <FontAwesomeIcon icon="fa-solid fa-spinner" spinPulse />
-            </div>            
-          </>
-        )}        
-      </div>
+            <div>{GeneralConst.EMAIL}</div>
+            <div>
+              <input
+                className="profile-input"
+                defaultValue={form.email}
+                name="email"
+                // value={profile !== null && (profile.user.email)}
+                disabled = {isEnableInput ? "" : "disabled"}
+                onChange={(e) => {onChangeHandler(e)}}
+              />
+            </div>
+            {isDemoUser && (
+              <div className="profile-disabled-action">
+                {GeneralConst.PROFILE_DEMO_DISABLE_MESSAGE}
+              </div>
+            )}        
+            {isShowActionButton && (
+              <>
+                <button
+                  className="btn-cust btn-signup btn-login-signup-first-child"
+                  onClick={updateHandler}
+                  disabled={isDemoUser ? true : false}
+                >
+                  {GeneralConst.UPDATE}
+                </button>
+                <button
+                  className="btn-cust btn-signup btn-login-signup-first-child"
+                  onClick={modalDeleteHandler}
+                  disabled={isDemoUser ? true : false}
+                >
+                  {GeneralConst.DELETE}
+                </button>
+              </>
+            )}
+            {isShowActionButton === false && (
+              <>
+                <div className="profile-wait-message">
+                  {GeneralConst.PROFILE_WAIT_MESSAGE}
+                </div>
+                <div className="profile-wait-message-icon">
+                  <FontAwesomeIcon icon="fa-solid fa-spinner" spinPulse />
+                </div>            
+              </>
+            )}        
+          </div>
+        </>
+      )}
       {isShowModalDelete && (
         <DeleteAccountConfirmationModal
           username = {form.username}

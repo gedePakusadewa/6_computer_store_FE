@@ -31,11 +31,17 @@ bug
   - add loading page
     - add loading icon between page                                                           
 
-### day 16
+### day 17
 - add blank payment page
 - add table for purchasing
 - add purchased customer product
-- add loading between page
+- ~add loading between page~
+  - ~dashboard~
+  - ~profile~
+  - ~cart~
+  - ~detail product~
+
+### day 16
 - ~check delete user already delete cart or not~
   - ~add URL to delete userprofile in FE~
 - ~update constant in BE~

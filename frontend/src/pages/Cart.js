@@ -4,11 +4,13 @@ import axios from "axios";
 import UrlConst from "../resources/Urls.js";
 import GeneralConst from "../resources/General.js";
 import ConvertToRupiah from "../components/ConvertToRupiah.js";
+import LoadingBetweenPage from "../components/LoadingBetweenPage.js";
 
 const Cart = () => {
   const [cookies, setCookie] = useCookies(['user']);
 
   const [cartProducts, setCartProducts] = useState(null);
+  const [isLoading, setIsloading] = useState(false);
 
   useEffect(() => {
     fetchAllCartProduct()
@@ -35,47 +37,59 @@ const Cart = () => {
   }
 
   const fetchAllCartProduct = () => {
+    setIsloading(true);
+
     axios({
       method: 'get',
       url: UrlConst.CART,
       headers: {'Authorization': "Token " + cookies['token']},
     }).then((res) => {
-      setCartProducts(res.data.cart_products)
+      setCartProducts(res.data.cart_products);
+      setIsloading(false);
     }).catch((err) => {
-      console.log("error in cart product detail")
+      console.log("error in cart product detail");
+      setIsloading(false);
     })
   }
 
   return (
     <>
-      {cartProducts === null || cartProducts.length === 0 && (
+      {isLoading && (
+        <LoadingBetweenPage />
+      )}
+      {isLoading === false && 
+        (cartProducts === null || 
+          cartProducts.length === 0) && (
         <div>
           There is no product here yet
         </div>
       )}
       <div className="cart-product-container">
         <div>
-          {(cartProducts !== null && cartProducts.length > 0) && (
+          {isLoading === false && 
+            (cartProducts !== null && 
+              cartProducts.length > 0) && (
             cartProducts.map(item => (
-                <div className="cart-product-wrapper">
-                  <img 
-                    src={UrlConst.PRODUCT_IMAGE_URI + item.image_url}
-                  />
-                  <div className="cart-product-title">{item.name}</div>
+              <div className="cart-product-wrapper">
+                <img 
+                  src={UrlConst.PRODUCT_IMAGE_URI + item.image_url}
+                />
+                <div className="cart-product-title">{item.name}</div>
+                <div>
+                  <div>{item.total_order} unit</div>
                   <div>
-                    <div>{item.total_order} unit</div>
-                    <div>
-                      {ConvertToRupiah(calculateTotalPriceOrder(item.total_order, item.price))}
-                    </div>
-                  </div>
-                  <div className="cart-product-delete-btn">
-                    <button
-                      onClick={() => deleteHandler(item.id)}
-                    >
-                      {GeneralConst.DELETE}
-                    </button>
+                    {ConvertToRupiah(
+                      calculateTotalPriceOrder(item.total_order, item.price))}
                   </div>
                 </div>
+                <div className="cart-product-delete-btn">
+                  <button
+                    onClick={() => deleteHandler(item.id)}
+                  >
+                    {GeneralConst.DELETE}
+                  </button>
+                </div>
+              </div>
             )) 
           )}
         </div>

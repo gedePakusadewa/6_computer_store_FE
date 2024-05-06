@@ -4,6 +4,7 @@ import axios from "axios";
 import GeneralConst from "../resources/General.js";
 import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
+import LoadingBetweenPage from "../components/LoadingBetweenPage.js";
 
 const Dashboard = () =>{
   const [cookies, setCookie] = useCookies(['user']);
@@ -45,7 +46,7 @@ const Dashboard = () =>{
   }
 
   return(
-    <>  
+    <>
       <div className="container-search-input">
         <input
           className="search-input-home"
@@ -66,6 +67,9 @@ const Dashboard = () =>{
           {GeneralConst.EMPTY_SEARCH
           .replace("{searchInput}", searchInput)}
         </>
+      )}
+      {products === null && (
+        <LoadingBetweenPage />
       )}
       {products !== null && (
         <ProductCards
