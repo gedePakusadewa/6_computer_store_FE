@@ -6,7 +6,7 @@ import DeleteAccountConfirmationModal
 import LoadingBetweenPage from "../components/LoadingBetweenPage.js";
 import { useState, useEffect, useContext } from "react";
 import { useCookies } from 'react-cookie';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AuthContext } from "../App.js";
 import { useNavigate } from "react-router-dom";
 

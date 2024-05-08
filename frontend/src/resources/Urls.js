@@ -9,6 +9,7 @@ const Url = {
     PRODUCT_SEARCH:"http://localhost:8000/api/v1/computer-store/productsearch",
     CART:"http://localhost:8000/api/v1/computer-store/cart",
     USER_DEMO:"http://localhost:8000/api/v1/computer-store/userdemo",
+    PAYMENT:"http://localhost:8000/api/v1/computer-store/payment",
 
     // LOGIN:"https://gdsadewa.com/6_computer_store_BE/api/v1/computer-store/login",
     // SIGNUP:"https://gdsadewa.com/6_computer_store_BE/api/v1/computer-store/signup",
@@ -20,6 +21,7 @@ const Url = {
     // PRODUCT_SEARCH:"https://gdsadewa.com/6_computer_store_BE/api/v1/computer-store/productsearch",
     // CART:"https://gdsadewa.com/6_computer_store_BE/api/v1/computer-store/cart",
     // USER_DEMO:"https://gdsadewa.com/6_computer_store_BE/api/v1/computer-store/userdemo",
+    // PAYMENT:"https://gdsadewa.com/6_computer_store_BE/api/v1/computer-store/payment",
 
   };
   

@@ -8,6 +8,7 @@ new feature
 - add update/delete button
   - add update and delete button in profile
 - add notification profile has been updated
+- add button "Delete all data by user demo" in profile
 
 bug
 - BE
@@ -31,14 +32,22 @@ bug
   - add loading page
     - add loading icon between page                                                           
 
+### day 18
+- add purchased customer product page
+  - add page tp view all purchasing product
+- ~add action button when user click pay~
+  - ~add loading icon when in progress payment~
+
 ### day 17
 - ~add blank payment page~
   - ~add button checkout in cart~
   - ~add blank page~
   - ~add back to cart button~
   - ~add pay button~
-- add table for purchasing
-- add purchased customer product
+- ~add table for purchasing~
+  - ~add table purchasing~
+  - ~add table purchsing detail~
+  - ~API to pay product~
 - ~add loading between page~
   - ~dashboard~
   - ~profile~

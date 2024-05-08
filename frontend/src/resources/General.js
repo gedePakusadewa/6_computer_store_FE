@@ -34,7 +34,8 @@ const General = {
     //payment
     PAYMENT_BTN_BACK_TO_CART:"Back To Cart",
     PAYMENT_BTN_PAY:"Pay(demo)",
-    PAYMENT_DEMO_PAY_DESC:"For now, user can directly pay without input anything."
+    PAYMENT_DEMO_PAY_DESC:"For now, user can directly pay without input anything.",
+    PAYMENT_LOADING: "Please wait, your payment already in process."
   };
   
   export default General
