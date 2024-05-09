@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../App.js";
 import { useContext } from "react";
 import { useCookies } from 'react-cookie';
-import GeneralConst from "../resources/General.js"
+import Constants from "../resources/Constants.js"
 import "../style.css";
 
 function Navbar({activeNavBar}) {
@@ -15,27 +15,36 @@ function Navbar({activeNavBar}) {
         <div>
           <Link to="/">
             <button  
-              className={activeNavBar === GeneralConst.DASHBOARD ? "btn-cust btn-active-navbar" : "btn-cust btn-non-active-navbar"}
+              className={activeNavBar === Constants.DASHBOARD ? "btn-cust btn-active-navbar" : "btn-cust btn-non-active-navbar"}
             >
-              {GeneralConst.DASHBOARD}
+              {Constants.DASHBOARD}
             </button>
           </Link>
         </div>
         <div>
           <Link to="/cart">
             <button 
-              className={activeNavBar === GeneralConst.CART ? "btn-cust btn-active-navbar" : "btn-cust btn-non-active-navbar"}
+              className={activeNavBar === Constants.CART ? "btn-cust btn-active-navbar" : "btn-cust btn-non-active-navbar"}
             >
-              {GeneralConst.CART}
+              {Constants.CART}
+            </button>
+          </Link>
+        </div>
+        <div>
+          <Link to="/transaction">
+            <button 
+              className={activeNavBar === Constants.TRANSACTION ? "btn-cust btn-active-navbar" : "btn-cust btn-non-active-navbar"}
+            >
+              {Constants.TRANSACTION}
             </button>
           </Link>
         </div>
         <div>
           <Link to="/profile">
             <button 
-              className={activeNavBar === GeneralConst.PROFILE ? "btn-cust btn-active-navbar" : "btn-cust btn-non-active-navbar"}
+              className={activeNavBar === Constants.PROFILE ? "btn-cust btn-active-navbar" : "btn-cust btn-non-active-navbar"}
             >
-              {GeneralConst.PROFILE}
+              {Constants.PROFILE}
             </button>
           </Link>
         </div>
@@ -45,7 +54,7 @@ function Navbar({activeNavBar}) {
               className="btn-cust btn-non-active-navbar"
               onClick={()=>context.handleLogout(cookies['token'])}
             >
-              {GeneralConst.LOGOUT}
+              {Constants.LOGOUT}
             </button>
           </div>
         )}

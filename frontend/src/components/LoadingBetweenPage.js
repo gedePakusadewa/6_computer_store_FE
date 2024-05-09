@@ -1,11 +1,11 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import GeneralConst from "../resources/General.js";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Constants from "../resources/Constants.js";
 
 const LoadingBetweenPage = () => {
   return(
     <>
       <div className="profile-wait-message">
-        {GeneralConst.PROFILE_WAIT_MESSAGE}
+        {Constants.PROFILE_WAIT_MESSAGE}
       </div>
       <div className="profile-wait-message-icon">
         <FontAwesomeIcon icon="fa-solid fa-spinner" spinPulse />

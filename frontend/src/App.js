@@ -7,9 +7,10 @@ import SignUp from './pages/SignUp.js';
 import Product from './pages/Product.js';
 import Cart from './pages/Cart.js';
 import Payment from './pages/Payment.js';
+import Transaction from './pages/Transaction.js';
 import AuthProvider from './helper/Authentication.js';
 import ProtectedRoute from './helper/ProtectedRoute.js';
-import GeneralConst from "./resources/General.js"
+import Constants from "./resources/Constants.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -32,7 +33,7 @@ function App() {
             <Route path="/" element={
               <ProtectedRoute>
                 <Navbar 
-                 activeNavBar={GeneralConst.DASHBOARD}
+                  activeNavBar={Constants.DASHBOARD}
                 />
                 <Dashboard />
               </ProtectedRoute> 
@@ -40,7 +41,7 @@ function App() {
             <Route path="/dashboard" element={
               <ProtectedRoute>
                 <Navbar 
-                 activeNavBar={GeneralConst.DASHBOARD}
+                  activeNavBar={Constants.DASHBOARD}
                 />
                 <Dashboard />
               </ProtectedRoute> 
@@ -48,7 +49,7 @@ function App() {
             <Route path="/profile" element={
               <ProtectedRoute>
                 <Navbar 
-                 activeNavBar={GeneralConst.PROFILE}
+                  activeNavBar={Constants.PROFILE}
                 />
                 <Profile />
               </ProtectedRoute> 
@@ -56,7 +57,7 @@ function App() {
             <Route path="/product/:id" element={
               <ProtectedRoute>
                 <Navbar 
-                 activeNavBar={GeneralConst.DASHBOARD}
+                  activeNavBar={Constants.DASHBOARD}
                 />
                 <Product />
               </ProtectedRoute> 
@@ -64,7 +65,7 @@ function App() {
             <Route path="/cart" element={
               <ProtectedRoute>
                 <Navbar 
-                 activeNavBar={GeneralConst.CART}
+                  activeNavBar={Constants.CART}
                 />
                 <Cart />
               </ProtectedRoute> 
@@ -72,6 +73,14 @@ function App() {
             <Route path="/payment" element={
               <ProtectedRoute>
                 <Payment />
+              </ProtectedRoute> 
+            }/>
+            <Route path="/transaction" element={
+              <ProtectedRoute>
+                <Navbar 
+                  activeNavBar={Constants.TRANSACTION}
+                />
+                <Transaction />
               </ProtectedRoute> 
             }/>
 

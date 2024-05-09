@@ -1,6 +1,6 @@
 import { AuthContext } from "../App.js";
 import { useContext, useState } from "react";
-import GeneralConst from "../resources/General.js"
+import Constants from "../resources/Constants.js";
 import "../style.css";
 
 const LogIn = () =>{
@@ -23,19 +23,19 @@ const LogIn = () =>{
 
   return(
     <div className="login-container-bg">
-        <h2 className="login-title">{GeneralConst.TITLE_LOGIN}</h2>
+        <h2 className="login-title">{Constants.TITLE_LOGIN}</h2>
       <div className="login-container">
         <div>
           {context.isErrorInput && (
-            <p className="wrong-username-password">{GeneralConst.WRONGINPUTLOGIN}</p>
+            <p className="wrong-username-password">{Constants.WRONGINPUTLOGIN}</p>
           )}
-          <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
+          <label htmlFor="title">{Constants.USERNAME}</label><br />
           <input 
             type="text"
             name="username"
             onChange={(e)=>{updateForm(e)}}
           /><br />
-          <label htmlFor="title">{GeneralConst.PASSWORD}</label><br />
+          <label htmlFor="title">{Constants.PASSWORD}</label><br />
           <input 
             type="password"
             name="password"
@@ -45,21 +45,21 @@ const LogIn = () =>{
             className="btn-cust btn-login btn-login-signup-first-child" 
             onClick={()=>context.handleLogin(form.username, form.password)}
           >
-            {GeneralConst.LOGIN}
+            {Constants.LOGIN}
           </button>
           {isShowSignUp && (
             <button
               className="btn-cust btn-signup" 
               onClick={()=>context.handleSignUp()}
             >
-              {GeneralConst.SIGNUP}
+              {Constants.SIGNUP}
             </button>
           )}
           <button
             className="btn-cust btn-signup" 
             onClick={()=>context.handleDemoLogin()}
           >
-            {GeneralConst.LOGIN_AS_GUEST}
+            {Constants.LOGIN_AS_GUEST}
           </button>
         </div>
       </div>

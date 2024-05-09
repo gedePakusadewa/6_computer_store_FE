@@ -1,10 +1,11 @@
 import ProductCards from "../components/ProductCards.js";
 import UrlConst from "../resources/Urls.js";
 import axios from "axios";
-import GeneralConst from "../resources/General.js";
+import Constants from "../resources/Constants.js";
+import LoadingBetweenPage from "../components/LoadingBetweenPage.js";
+
 import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
-import LoadingBetweenPage from "../components/LoadingBetweenPage.js";
 
 const Dashboard = () =>{
   const [cookies, setCookie] = useCookies(['user']);
@@ -59,12 +60,12 @@ const Dashboard = () =>{
           onClick={searchHandler}
           className="btn-search-home"
         >
-          {GeneralConst.SEARCH}
+          {Constants.SEARCH}
         </button>
       </div>
       {isEmptySearchResult === true && (
         <>
-          {GeneralConst.EMPTY_SEARCH
+          {Constants.EMPTY_SEARCH
           .replace("{searchInput}", searchInput)}
         </>
       )}

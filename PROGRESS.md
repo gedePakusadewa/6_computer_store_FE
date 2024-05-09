@@ -35,6 +35,8 @@ bug
 ### day 18
 - add purchased customer product page
   - add page tp view all purchasing product
+  - put this in cart
+  - ~create API to get data purchased~
 - ~add action button when user click pay~
   - ~add loading icon when in progress payment~
 

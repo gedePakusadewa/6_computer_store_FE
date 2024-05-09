@@ -1,7 +1,7 @@
 import { AuthContext } from "../App.js";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import GeneralConst from "../resources/General.js"
+import Constants from "../resources/Constants.js";
 import "../style.css";
 
 const SignUp = () =>{
@@ -26,23 +26,23 @@ const SignUp = () =>{
     <div className="login-container-bg">
       <div className="login-container">
         <div>
-          <h2>{GeneralConst.SIGNUP_TOBE_MEMBER}</h2>
+          <h2>{Constants.SIGNUP_TOBE_MEMBER}</h2>
           {context.isErrorInput && (
-            <p className="wrong-username-password">{GeneralConst.SIGNUP_WRONG_INPUT}</p>
+            <p className="wrong-username-password">{Constants.SIGNUP_WRONG_INPUT}</p>
           )}
-          <label htmlFor="title">{GeneralConst.USERNAME}</label><br />
+          <label htmlFor="title">{Constants.USERNAME}</label><br />
           <input 
             type="text"
             name="username"
             onChange={(e)=>{updateForm(e)}}
           /><br />
-          <label htmlFor="title">{GeneralConst.PASSWORD}</label><br />
+          <label htmlFor="title">{Constants.PASSWORD}</label><br />
           <input 
             type="password"
             name="password"
             onChange={(e)=>{updateForm(e)}}
           /><br />
-          <label htmlFor="title">{GeneralConst.EMAIL}</label><br />
+          <label htmlFor="title">{Constants.EMAIL}</label><br />
           <input 
             type="email"
             name="email"
@@ -58,13 +58,13 @@ const SignUp = () =>{
               )
             }
           >
-            {GeneralConst.SUBMIT}
+            {Constants.SUBMIT}
           </button>
           <Link to="/login">
             <button 
               className="btn-cust btn-login"
             >
-              {GeneralConst.BACKTOLOGIN}
+              {Constants.BACKTOLOGIN}
             </button>
           </Link>
         </div>

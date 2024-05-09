@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
 import axios from "axios";
 import UrlConst from "../resources/Urls.js";
-import GeneralConst from "../resources/General.js";
+import Constants from "../resources/Constants.js";
 import ReviewStar from "../components/ReviewStar.js";
 import ConvertToRupiah from "../components/ConvertToRupiah.js";
 import LoadingBetweenPage from "../components/LoadingBetweenPage.js";
@@ -68,7 +68,7 @@ const Product = () => {
           <div className="product-description"> 
             <div className="product-description-title">{product.name}</div>
             <div>{ReviewStar(product.star_review)}</div>
-            <div>{GeneralConst.PRODUCT_LOREM_IPSUM}</div>
+            <div>{Constants.PRODUCT_LOREM_IPSUM}</div>
           </div>
           <div>
             <div className="product-buy-wrapper">
@@ -88,7 +88,7 @@ const Product = () => {
                 className="product-buy-button"
                 onClick={AddToCartHandler}
               >
-                {GeneralConst.PRODUCT_ADD_CART}
+                {Constants.PRODUCT_ADD_CART}
               </button>
             </div>
           </div>

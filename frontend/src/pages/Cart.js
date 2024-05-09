@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie';
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import UrlConst from "../resources/Urls.js";
-import GeneralConst from "../resources/General.js";
+import Constants from "../resources/Constants.js";
 import ConvertToRupiah from "../components/ConvertToRupiah.js";
 import LoadingBetweenPage from "../components/LoadingBetweenPage.js";
 
@@ -93,7 +93,7 @@ const Cart = () => {
                   <button
                     onClick={() => deleteHandler(item.id)}
                   >
-                    {GeneralConst.DELETE}
+                    {Constants.DELETE}
                   </button>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const Cart = () => {
         <div>
           <div className="cart-total-container">
             <div>
-              {GeneralConst.CART_TOTAL_ITEM}
+              {Constants.CART_TOTAL_ITEM}
             </div>
             <div>
               3
@@ -111,7 +111,7 @@ const Cart = () => {
           </div>
           <div className="cart-total-container">
             <div>
-              {GeneralConst.CART_TOTAL_PRICE}
+              {Constants.CART_TOTAL_PRICE}
             </div>
             <div>
               Rp. 1.000.000, 00
@@ -120,7 +120,7 @@ const Cart = () => {
           <button
             onClick={checkOutHandler}
           >
-            {GeneralConst.CART_CHECKOUT}
+            {Constants.CART_CHECKOUT}
           </button>
         </div>
       </div>

@@ -1,6 +1,7 @@
-import Generalconst from "../resources/General";
+import Constants from "../resources/Constants.js";
 import Urlconst from "../resources/Urls";
 import axios from "axios";
+
 import { useNavigate } from "react-router-dom";
 import { useCookies } from 'react-cookie';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -36,7 +37,7 @@ const Payment = () => {
     return(
       <>
         <div className="profile-wait-message">
-          {Generalconst.PAYMENT_LOADING}
+          {Constants.PAYMENT_LOADING}
         </div>
         <div className="profile-wait-message-icon">
           <FontAwesomeIcon icon="fa-solid fa-spinner" spinPulse />
@@ -53,17 +54,17 @@ const Payment = () => {
       {isLoading === false && (
         <>
           <div>
-            {Generalconst.PAYMENT_DEMO_PAY_DESC}
+            {Constants.PAYMENT_DEMO_PAY_DESC}
           </div>
           <button
             onClick={backToCartHandler}
             >
-            {Generalconst.PAYMENT_BTN_BACK_TO_CART}
+            {Constants.PAYMENT_BTN_BACK_TO_CART}
           </button>
           <button
             onClick={paymentHandler}     
           >
-            {Generalconst.PAYMENT_BTN_PAY}
+            {Constants.PAYMENT_BTN_PAY}
           </button>
         </>
       )}

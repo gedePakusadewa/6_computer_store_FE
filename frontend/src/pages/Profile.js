@@ -1,5 +1,5 @@
 import UrlConst from "../resources/Urls.js";
-import GeneralConst from "../resources/General.js";
+import Constants from "../resources/Constants.js";
 import axios from "axios";
 import DeleteAccountConfirmationModal 
   from "../components/DeleteAccountConfirmationModal.js";
@@ -119,8 +119,8 @@ const Profile = () =>{
       {isLoading === false && (
         <>
           <div className="profile-container">
-            <div className="title-profile">{GeneralConst.PROFILE}</div>
-            <div>{GeneralConst.USERNAME}</div>
+            <div className="title-profile">{Constants.PROFILE}</div>
+            <div>{Constants.USERNAME}</div>
             <div>
               <input 
                 className="profile-input"
@@ -131,7 +131,7 @@ const Profile = () =>{
                 onChange={(e) => {onChangeHandler(e)}}
               />
             </div>
-            <div>{GeneralConst.EMAIL}</div>
+            <div>{Constants.EMAIL}</div>
             <div>
               <input
                 className="profile-input"
@@ -144,7 +144,7 @@ const Profile = () =>{
             </div>
             {isDemoUser && (
               <div className="profile-disabled-action">
-                {GeneralConst.PROFILE_DEMO_DISABLE_MESSAGE}
+                {Constants.PROFILE_DEMO_DISABLE_MESSAGE}
               </div>
             )}        
             {isShowActionButton && (
@@ -154,21 +154,21 @@ const Profile = () =>{
                   onClick={updateHandler}
                   disabled={isDemoUser ? true : false}
                 >
-                  {GeneralConst.UPDATE}
+                  {Constants.UPDATE}
                 </button>
                 <button
                   className="btn-cust btn-signup btn-login-signup-first-child"
                   onClick={modalDeleteHandler}
                   disabled={isDemoUser ? true : false}
                 >
-                  {GeneralConst.DELETE}
+                  {Constants.DELETE}
                 </button>
               </>
             )}
             {isShowActionButton === false && (
               <>
                 <div className="profile-wait-message">
-                  {GeneralConst.PROFILE_WAIT_MESSAGE}
+                  {Constants.PROFILE_WAIT_MESSAGE}
                 </div>
                 <div className="profile-wait-message-icon">
                   <FontAwesomeIcon icon="fa-solid fa-spinner" spinPulse />
