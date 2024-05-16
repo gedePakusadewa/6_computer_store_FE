@@ -19,7 +19,13 @@ const AuthProvider = ({ children }) => {
       }).
       then((res) => {
         setToken(res.data.Token);
-        navigate('/');
+
+        if(res.data.User.is_superuser === false){
+          navigate('/');
+        }else{
+          navigate('/admin');
+        }
+        
         setCookie('token', res.data.Token, { path: '/' });
         setIsErrorInput(false)
       }).

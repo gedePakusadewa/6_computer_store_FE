@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from "./components/NavBar.js";
+import AdminNavbar from "./components/admin/NavBar.js";
 import Dashboard from './pages/Dashboard.js';
 import Profile from './pages/Profile.js';
 import LogIn from './pages/LogIn.js';
@@ -8,6 +9,10 @@ import Product from './pages/Product.js';
 import Cart from './pages/Cart.js';
 import Payment from './pages/Payment.js';
 import Transaction from './pages/Transaction.js';
+import AdminDashboard from './pages/admin/Dashboard.js';
+import AdminProducts from './pages/admin/Products.js';
+import AdminUsers from './pages/admin/Users.js';
+import AdminProductAnalytic from './pages/admin/ProductAnalytic.js';
 import AuthProvider from './helper/Authentication.js';
 import ProtectedRoute from './helper/ProtectedRoute.js';
 import Constants from "./resources/Constants.js";
@@ -81,6 +86,38 @@ function App() {
                   activeNavBar={Constants.TRANSACTION}
                 />
                 <Transaction />
+              </ProtectedRoute> 
+            }/>
+            <Route path="/admin/" element={
+              <ProtectedRoute>
+                <AdminNavbar 
+                  activeNavBar={Constants.ADMIN_DASHBOARD}
+                />
+                <AdminDashboard />
+              </ProtectedRoute> 
+            }/>
+            <Route path="/admin/products" element={
+              <ProtectedRoute>
+                <AdminNavbar 
+                  activeNavBar={Constants.ADMIN_PRODUCTS}
+                />
+                <AdminProducts />
+              </ProtectedRoute> 
+            }/>
+            <Route path="/admin/users" element={
+              <ProtectedRoute>
+                <AdminNavbar 
+                  activeNavBar={Constants.ADMIN_USERS}
+                />
+                <AdminUsers />
+              </ProtectedRoute> 
+            }/>
+            <Route path="/admin/productanalytic" element={
+              <ProtectedRoute>
+                <AdminNavbar 
+                  activeNavBar={Constants.ADMIN_PRODUCT_ANALYTIC}
+                />
+                <AdminProductAnalytic />
               </ProtectedRoute> 
             }/>
 

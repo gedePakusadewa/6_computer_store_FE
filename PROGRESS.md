@@ -12,7 +12,10 @@ new feature
 - add page admin
   - there are admin and admin demo, admin demo only can READ not CUD
   - can upload product item, edit and delete product item
-  - 
+- add API to generate random account and random ALL data
+- add API to generate random ALL data for demo user
+- add button to delete all data api user demo
+- non admin can access menu admin using path "/admin"
 
 bug
 - BE
@@ -39,14 +42,21 @@ bug
     - when update order, the input number not updated                                                      
 
 ### day 20
-- add API to generate random account and random ALL data
-- add API to generate random ALL data for demo user
+- add admin page
+  - admin can
+    - CRUD product
+    - liat list user termasuk yg di delete
+    - delete account user
+    - liat product mana yg paling banyak dibeli
+    - liat product mana yg paling jarang diliat(based on detail product click)
+    - there are admin and admin demo, admin demo only can see not modify
+    - ~page dasboard basic~
+    - ~add link to page "CRUD products", "User", "Product Analytic"~
 - ~add unit input in cart and its function~
   - ~add api to update unit data when trigger~
   - ~add input number~
 - ~fix total order and total cost in cart FE~
 - ~fix delete issue in cart~
-- add button to delete all data api user demo
 
 ###  day 19
 

@@ -4,6 +4,11 @@ const General = {
     PROFILE:"Profile",
     CART:"Cart",
     TRANSACTION:"Transaction",
+    ADMIN_DASHBOARD:"Dashboard",
+    ADMIN_PRODUCTS:"Products",
+    ADMIN_USERS:"Users",
+    ADMIN_PRODUCT_ANALYTIC:"Product Analytic",
+
 
     // general
     HOME:"Home",
