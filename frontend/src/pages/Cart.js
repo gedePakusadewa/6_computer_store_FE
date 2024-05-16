@@ -17,6 +17,8 @@ const Cart = () => {
     lower:1
   })
   const [showOrderError, setShowOrderError] = useState(false);
+  const [totalOrder, setTotalOrder] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   const navigate = useNavigate();
 
@@ -51,6 +53,8 @@ const Cart = () => {
     }).then((res) => {
       setCartProducts(res.data.cart_products);
       setIsloading(false);
+      setTotalOrder(res.data.total_order_price.total_order);
+      setTotalPrice(res.data.total_order_price.total_price);
     }).catch((err) => {
       console.log("error in cart product detail");
       setIsloading(false);
@@ -144,16 +148,14 @@ const Cart = () => {
       {isLoading === false && 
         (cartProducts === null || 
           cartProducts.length === 0) && (
-        <div>
-          There is no product here yet
-        </div>
+        <div>{Constants.CART_NO_PRODUCT}</div>
       )}
       <div className="cart-product-container">
         <div>
           {isLoading === false && 
             (cartProducts !== null && 
               cartProducts.length > 0) && (
-                cartProductHandler(cartProducts)
+                cartProductHandler(cartProducts)                
           )}
         </div>
         <div>
@@ -161,17 +163,13 @@ const Cart = () => {
             <div>
               {Constants.CART_TOTAL_ITEM}
             </div>
-            <div>
-              3
-            </div>
+            <div>{totalOrder}</div>
           </div>
           <div className="cart-total-container">
             <div>
               {Constants.CART_TOTAL_PRICE}
             </div>
-            <div>
-              Rp. 1.000.000, 00
-            </div>
+            <div>{ConvertToRupiah(totalPrice)}</div>
           </div>
           <button
             onClick={checkOutHandler}

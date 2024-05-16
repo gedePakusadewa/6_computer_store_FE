@@ -41,9 +41,10 @@ bug
 ### day 20
 - add API to generate random account and random ALL data
 - add API to generate random ALL data for demo user
-- add unit input in cart and its function
+- ~add unit input in cart and its function~
   - ~add api to update unit data when trigger~
-  - add input number
+  - ~add input number~
+- ~fix total order and total cost in cart FE~
 - add button to delete all data api user demo
 
 ###  day 19
