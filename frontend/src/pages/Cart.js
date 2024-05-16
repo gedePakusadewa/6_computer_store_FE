@@ -35,7 +35,7 @@ const Cart = () => {
       method: 'delete',
       url: UrlConst.CART,
       headers: {'Authorization': "Token " + cookies['token']},
-      data: { product_id : productId }
+      data: { cart_id : productId }
     }).then((res) => {
       fetchAllCartProduct()
     }).catch((err) => {
@@ -129,7 +129,7 @@ const Cart = () => {
             </div>
             <div className="cart-product-delete-btn">
               <button
-                onClick={() => deleteHandler(item.id)}
+                onClick={() => deleteHandler(item.id_cart)}
               >
                 {Constants.DELETE}
               </button>

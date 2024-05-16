@@ -45,6 +45,7 @@ bug
   - ~add api to update unit data when trigger~
   - ~add input number~
 - ~fix total order and total cost in cart FE~
+- ~fix delete issue in cart~
 - add button to delete all data api user demo
 
 ###  day 19
