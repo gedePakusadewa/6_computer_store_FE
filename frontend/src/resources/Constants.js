@@ -42,6 +42,8 @@ const General = {
     CART_CHECKOUT:"Check Out",
     CART_TOTAL_ITEM:"Total Item(s)",
     CART_TOTAL_PRICE:"Total Price",
+    CART_UNIT:"Unit",
+    CART_INVALID_ORDER: "Your order input invalid, please input between 1 to 100.",
 
     //payment
     PAYMENT_BTN_BACK_TO_CART:"Back To Cart",

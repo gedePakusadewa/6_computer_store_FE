@@ -9,6 +9,10 @@ new feature
   - add update and delete button in profile
 - add notification profile has been updated
 - add button "Delete all data by user demo" in profile
+- add page admin
+  - there are admin and admin demo, admin demo only can READ not CUD
+  - can upload product item, edit and delete product item
+  - 
 
 bug
 - BE
@@ -30,12 +34,28 @@ bug
   - style
     - ~update style login~
   - add loading page
-    - add loading icon between page                                                           
+    - add loading icon between page
+  - cart order input not update
+    - when update order, the input number not updated                                                      
+
+### day 20
+- add API to generate random account and random ALL data
+- add API to generate random ALL data for demo user
+- add unit input in cart and its function
+  - ~add api to update unit data when trigger~
+  - add input number
+- add button to delete all data api user demo
+
+###  day 19
+
+- ~add delete ALL data API for demo user~
+  - ~create SP~
+
 
 ### day 18
-- add purchased customer product page
-  - add page tp view all purchasing product
-  - put this in cart
+- ~add purchased customer product page~
+  - ~add page tp view all purchasing product~
+  - ~create new page transaction~
   - ~create API to get data purchased~
 - ~add action button when user click pay~
   - ~add loading icon when in progress payment~
