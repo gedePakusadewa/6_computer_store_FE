@@ -52,6 +52,8 @@ bug
     - there are admin and admin demo, admin demo only can see not modify
     - ~page dasboard basic~
     - ~add link to page "CRUD products", "User", "Product Analytic"~
+    - admin product page
+      - list of product with button update and delete
 - ~add unit input in cart and its function~
   - ~add api to update unit data when trigger~
   - ~add input number~

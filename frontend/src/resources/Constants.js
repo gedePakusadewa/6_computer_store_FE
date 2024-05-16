@@ -25,6 +25,7 @@ const General = {
     DELETE: "Delete",
     UPDATE:"Update",
     CLOSE:"Close",
+    DETAIL:"Detail",
 
     // product
     PRODUCT_DESCRIPTION: "Description",
@@ -58,7 +59,10 @@ const General = {
     PAYMENT_LOADING: "Please wait, your payment already in process.",
 
     // transaction
-    TRANSACTION_LOADING:"Please wait while we are sending data to you."
+    TRANSACTION_LOADING:"Please wait while we are sending data to you.",
+
+    // admin products
+    ADMIN_PRODUCT_ADD:"Add New Products"
   };
   
   export default General
