@@ -9,6 +9,7 @@ const Products = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['user']);
 
   const [products, setProducts] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     fetchProductHandler();
@@ -19,6 +20,19 @@ const Products = () => {
       method: 'get',
       url: UrlConst.ADMIN_PRODUCTS,
       headers: {'Authorization': "Token " + cookies['token']}
+    }).then((res) => {
+      setProducts(res.data);
+    }).catch((err) => {
+
+    })
+  }
+
+  const searchHandler = () => {
+    axios({
+      method: 'get',
+      url: UrlConst.ADMIN_PRODUCTS_SEARCH,
+      headers: {'Authorization': "Token " + cookies['token']},
+      params:{ keywords: searchInput}
     }).then((res) => {
       setProducts(res.data);
     }).catch((err) => {
@@ -66,9 +80,13 @@ const Products = () => {
       <input
         className="search-input-home"
         placeholder="Example: Monitor"
+        onChange={
+          (e) => {setSearchInput(e.target.value)}
+        }
       />
       <button
         className="btn-search-home"
+        onClick={searchHandler}
       >
         {Constants.SEARCH}
       </button>

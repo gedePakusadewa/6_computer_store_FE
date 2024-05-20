@@ -62,7 +62,8 @@ const General = {
     TRANSACTION_LOADING:"Please wait while we are sending data to you.",
 
     // admin products
-    ADMIN_PRODUCT_ADD:"Add New Products"
+    ADMIN_PRODUCT_ADD:"Add New Product",
+    ADMIN_USER_ADD:"Add New User",
   };
   
   export default General

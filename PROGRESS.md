@@ -41,6 +41,22 @@ bug
   - cart order input not update
     - when update order, the input number not updated                                                      
 
+### day 21
+- add admin page
+  - admin can
+    - CRUD product
+    - liat list user termasuk yg di delete
+    - delete account user
+    - liat product mana yg paling banyak dibeli
+    - liat product mana yg paling jarang diliat(based on detail product click)
+    - there are admin and admin demo, admin demo only can see not modify
+    - ~page dasboard basic~
+    - ~add link to page "CRUD products", "User", "Product Analytic"~
+    - admin product page
+      - ~list of product with button update and delete~
+      - ~make search product working~
+      - make upload product button working
+
 ### day 20
 - add admin page
   - admin can
