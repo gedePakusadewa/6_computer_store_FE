@@ -37,6 +37,9 @@ const General = {
     PRODUCT_INPUT_IMAGE: "Product Image",
     PRODUCT_INPUT_DESCRIPTION: "Product Description",
     PRODUCT_PLEASE_WAIT_UPLOAD: "Please wait, data is uploading",
+    PRODUCT_PLEASE_WAIT_DELETING: "Please wait, system is deleting product",
+    PRODUCT_DELETE_YES_BTN: "Yes, delete product",
+    PRODUCT_DELETE_CONFIRMATION_TEXT:"Are you sure delete this product?",
 
     // login
     LOGIN_AS_GUEST:"Log In As Guest (demo)",

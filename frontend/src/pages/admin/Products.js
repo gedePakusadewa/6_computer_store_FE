@@ -5,6 +5,7 @@ import Constants from "../../resources/Constants.js";
 import axios from "axios";
 import ConvertToRupiah from "../../components/ConvertToRupiah.js";
 import ModalCreateProduct from "../../components/admin/ModalCreateProduct.js";
+import ModalDeleteProduct from "../../components/admin/ModalDeleteProduct.js";
 
 const Products = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['user']);
@@ -12,6 +13,9 @@ const Products = () => {
   const [products, setProducts] = useState(null);
   const [searchInput, setSearchInput] = useState("");
   const [isShowModalAdd, setIsShowModalAdd] = useState(false);
+  const [isShowModalDelete, setIsShowModalDelete] = useState(false);
+  const [productIdDelete, setProductIdDelete] = useState("");
+
 
   useEffect(() => {
     fetchProductHandler();
@@ -66,6 +70,7 @@ const Products = () => {
                 {Constants.UPDATE}
               </button>
               <button
+                onClick={() => {modalDeleteHandler(item.id)}}
               >
                 {Constants.DELETE}
               </button>
@@ -76,8 +81,13 @@ const Products = () => {
     )
   }
 
-  const modalDeleteHandler = () => {
+  const modalAddHandler = () => {
     setIsShowModalAdd(true);
+  }
+
+  const modalDeleteHandler = (id) => {
+    setProductIdDelete(id)
+    setIsShowModalDelete(true);
   }
 
   return (
@@ -98,7 +108,7 @@ const Products = () => {
       </button>
       <br />
       <button
-        onClick={modalDeleteHandler}
+        onClick={modalAddHandler}
       >
         {Constants.ADMIN_PRODUCT_ADD}
 
@@ -110,6 +120,12 @@ const Products = () => {
       {isShowModalAdd && (
         <ModalCreateProduct
           setIsShowModalAdd={setIsShowModalAdd}
+        />
+      )}
+      {isShowModalDelete && (
+        <ModalDeleteProduct
+          productId={productIdDelete}
+          setIsShowModalDelete={setIsShowModalDelete}
         />
       )}
     </>
