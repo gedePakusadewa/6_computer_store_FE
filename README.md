@@ -29,13 +29,17 @@ Key features:
 #### Additional Enhancements (Optional):
   - Social Sharing
     - Implement social sharing features, allowing users to share their favorite recipes on social media.
+
   - admin page
     - admin can CRUD user, CRUD product
+
   - Add total number review in star review
     - add how many people have been submitted review
     
   - Add payment page
     - there is a check out page for use input some payment information
+    - https://docs.stripe.com/payments?payments=popular
+
 
   - All purchased item page
     - user can see all product that have been bought in a page
@@ -49,3 +53,15 @@ Key features:
 
   - user can buy product in some quatity
     - user can input how many user want to but the product
+
+  - message menu
+    - user can chat to admin and vice versa
+
+  - page promo khusus
+    - use can see what products are in promo
+
+  - menu wishlist
+    - user can favorite product and see that product they favorited
+
+  - make burger menu
+  https://blog.logrocket.com/create-responsive-navbar-react-css/

@@ -17,6 +17,9 @@ new feature
 - add button to delete all data api user demo
 - non admin can access menu admin using path "/admin"
 
+general
+- admnin
+
 bug
 - BE
   - delete cart issue production
@@ -40,6 +43,13 @@ bug
     - add loading icon between page
   - cart order input not update
     - when update order, the input number not updated                                                      
+
+### day 23
+- Add API to handle upload/delete product
+- 
+
+### day 22
+- add modal to create product at admin page
 
 ### day 21
 - add admin page

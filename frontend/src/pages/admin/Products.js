@@ -4,12 +4,14 @@ import UrlConst from "../../resources/Urls.js";
 import Constants from "../../resources/Constants.js";
 import axios from "axios";
 import ConvertToRupiah from "../../components/ConvertToRupiah.js";
+import ModalCreateProduct from "../../components/admin/ModalCreateProduct.js";
 
 const Products = () => {
   const [cookies, setCookie, removeCookie] = useCookies(['user']);
 
   const [products, setProducts] = useState(null);
   const [searchInput, setSearchInput] = useState("");
+  const [isShowModalAdd, setIsShowModalAdd] = useState(false);
 
   useEffect(() => {
     fetchProductHandler();
@@ -74,6 +76,10 @@ const Products = () => {
     )
   }
 
+  const modalDeleteHandler = () => {
+    setIsShowModalAdd(true);
+  }
+
   return (
     <>
       Products
@@ -92,12 +98,19 @@ const Products = () => {
       </button>
       <br />
       <button
+        onClick={modalDeleteHandler}
       >
         {Constants.ADMIN_PRODUCT_ADD}
+
       </button>
       {(products !== null && 
           products.length > 0) && (
             cardHandler(products)                
+      )}
+      {isShowModalAdd && (
+        <ModalCreateProduct
+          setIsShowModalAdd={setIsShowModalAdd}
+        />
       )}
     </>
   )
